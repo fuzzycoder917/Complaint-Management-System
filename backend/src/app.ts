@@ -20,8 +20,12 @@ connect().then((connection) => {
     process.exit(1);
 });
 import issueRoutes from "./routes/issue.routes.js";
+import departmentRoutes from "./routes/department.routes.js";
+import complaintRoutes from "./routes/complaint.routes.js";
 import { errorMiddleware } from "./middlewares/error.middleware.js";
 app.use("/api/issues", issueRoutes);
+app.use("/api/departments", departmentRoutes);
+app.use("/api/complaints", complaintRoutes);
 
 app.use(errorMiddleware)
 app.listen(PORT, () => {
